@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="">
+	<title></title>
+</head>
+<body>
+<script>
+	var n = prompt('n = ', 0);
+    let elements = [3];
+    for (var i = 0; i < n; i++) {
+    	elements[i] = prompt('Заполнения масива', 0);
+    }
+    let number = 1;
+    while(number < n)
+		{
+			for(let j = number-1; j >= 0; j--)
+            {
+                if (elements[number] > elements[j])
+                {
+                    let copy = elements[j];
+                    elements[j] = elements[number];
+                    elements[number] = copy;
+                    number = j;
+                }
+            }
+    	    number = number + 1;
+        }
+    for (let i = 0; i < n; i++)
+        {
+            alert(elements[i]);
+        }
+</script>
+</body>
+</html>
